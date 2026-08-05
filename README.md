@@ -1,24 +1,62 @@
-# Clean X - Hide Verified
+# X-Helper
 
-Simple Chrome extension to hide all the verified (blue check) people on Twitter/X.
+A lightweight browser extension for controlling verified content on X.
 
-**Started:** May 30, 2026
+X-Helper lets you choose where verified accounts are filtered and which verification badge types are affected.
 
-### Why I made this
-I'm tired of the algorithm pushing verified accounts to the top of every reply section. This extension hides them so you see more normal people instead of the same paid accounts arguing all day.
+## Features
 
-### Features
-- Option to hide verified replies
-- Option to hide verified posts too
-- Simple on/off toggles
-- Remembers your settings
+- Filter verified accounts from replies
+- Filter verified accounts from timelines
+- Independent controls for blue, gold, and gray badges
+- Master on/off control
+- Preferences saved locally
+- Chrome and Firefox support
+- No analytics or external services
 
-### How to install
-1. Download or clone this repo
-2. Go to chrome://extensions/
-3. Turn on Developer mode
-4. Click "Load unpacked" and select this folder
+## Default configuration
 
-That's it.
+X-Helper initially:
 
-Made because I was annoyed. Let's see if it actually makes Twitter better.
+- Filters replies
+- Leaves timeline posts visible
+- Filters blue badges
+- Leaves gold and gray badges visible
+
+Every option can be changed from the extension popup.
+
+## How it works
+
+X-Helper examines posts already displayed on `x.com` or `twitter.com`.
+
+For each post, it determines:
+
+1. Whether the post is in a reply conversation or timeline
+2. Whether the author has a blue, gold, or gray verification badge
+3. Whether the user's selected filters apply
+
+Matching posts are hidden locally in the browser.
+
+Changing a setting saves the new configuration and refreshes the active page.
+
+## Privacy
+
+X-Helper does not collect or transmit user data.
+
+The extension stores only the user's filter preferences in browser extension storage. All post detection and filtering happens locally.
+
+See [PRIVACY.md](PRIVACY.md) for the complete privacy policy.
+
+## Development
+
+### Requirements
+
+- Node.js
+- npm
+
+The current release was tested with Node.js 22 and npm 10.
+
+### Install dependencies
+
+```bash
+npm install
