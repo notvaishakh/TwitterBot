@@ -2,12 +2,191 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Default Popup Title</title>
-    <meta name="manifest.type" content="browser_action" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <meta
+      name="theme-color"
+      content="#f4f4f2"
+    />
+
+    <title>X-Helper</title>
   </head>
+
   <body>
-    <div id="app"></div>
-    <script type="module" src="./main.ts"></script>
+    <main class="popup">
+      <header class="topbar">
+        <h1>X-Helper</h1>
+
+        <label
+          class="master-control"
+          for="enabled-toggle"
+        >
+          <span id="status-text">On</span>
+
+          <span class="switch">
+            <input
+              id="enabled-toggle"
+              type="checkbox"
+            />
+
+            <span class="switch-body">
+              <span class="switch-thumb"></span>
+            </span>
+          </span>
+        </label>
+      </header>
+
+      <div id="filter-controls">
+        <section
+          class="control-group"
+          aria-labelledby="location-heading"
+        >
+          <h2 id="location-heading">
+            Filter in
+          </h2>
+
+          <label
+            class="control-row"
+            for="replies-toggle"
+          >
+            <span class="control-name">
+              Replies
+            </span>
+
+            <span class="switch">
+              <input
+                id="replies-toggle"
+                type="checkbox"
+              />
+
+              <span class="switch-body">
+                <span class="switch-thumb"></span>
+              </span>
+            </span>
+          </label>
+
+          <label
+            class="control-row"
+            for="timeline-toggle"
+          >
+            <span class="control-name">
+              Timeline
+            </span>
+
+            <span class="switch">
+              <input
+                id="timeline-toggle"
+                type="checkbox"
+              />
+
+              <span class="switch-body">
+                <span class="switch-thumb"></span>
+              </span>
+            </span>
+          </label>
+        </section>
+
+        <section
+          class="control-group"
+          aria-labelledby="badge-heading"
+        >
+          <h2 id="badge-heading">
+            Badge type
+          </h2>
+
+          <label
+            class="control-row"
+            for="blue-toggle"
+          >
+            <span class="badge-name">
+              <span
+                class="badge-swatch blue"
+                aria-hidden="true"
+              ></span>
+
+              <span>Blue</span>
+            </span>
+
+            <span class="switch">
+              <input
+                id="blue-toggle"
+                type="checkbox"
+              />
+
+              <span class="switch-body">
+                <span class="switch-thumb"></span>
+              </span>
+            </span>
+          </label>
+
+          <label
+            class="control-row"
+            for="gold-toggle"
+          >
+            <span class="badge-name">
+              <span
+                class="badge-swatch gold"
+                aria-hidden="true"
+              ></span>
+
+              <span>Gold</span>
+            </span>
+
+            <span class="switch">
+              <input
+                id="gold-toggle"
+                type="checkbox"
+              />
+
+              <span class="switch-body">
+                <span class="switch-thumb"></span>
+              </span>
+            </span>
+          </label>
+
+          <label
+            class="control-row"
+            for="gray-toggle"
+          >
+            <span class="badge-name">
+              <span
+                class="badge-swatch gray"
+                aria-hidden="true"
+              ></span>
+
+              <span>Gray</span>
+            </span>
+
+            <span class="switch">
+              <input
+                id="gray-toggle"
+                type="checkbox"
+              />
+
+              <span class="switch-body">
+                <span class="switch-thumb"></span>
+              </span>
+            </span>
+          </label>
+        </section>
+      </div>
+
+      <p
+        id="save-status"
+        class="screen-reader-only"
+        aria-live="polite"
+      >
+        Settings loaded.
+      </p>
+    </main>
+
+    <script
+      type="module"
+      src="./main.ts"
+    ></script>
   </body>
 </html>

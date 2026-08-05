@@ -1,17 +1,17 @@
 {
-  "name": "wxt-starter",
-  "description": "manifest.json description",
+  "name": "x-helper",
+  "description": "Filter verified replies and posts on X by badge type.",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.2.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
     "dev:firefox": "wxt -b firefox",
     "build": "wxt build",
     "build:firefox": "wxt build -b firefox",
+    "compile": "tsc --noEmit",
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
-    "compile": "tsc --noEmit",
     "postinstall": "wxt prepare"
   },
   "devDependencies": {
